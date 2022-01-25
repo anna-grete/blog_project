@@ -1,6 +1,6 @@
 import http, { createServer } from 'http';
 import App from './app';
-import { openDatabaseConnection } from './db/db';
+import { openDatabaseConnection } from './db/database';
 
 const startServer = async () => {
     const httpServer = createServer(App);
