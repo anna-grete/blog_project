@@ -1,6 +1,5 @@
 import express, { Request, Response } from 'express';
-import { getConnection } from 'typeorm'
-import User from '../../entities/user';
+import User from '../../entities/User';
 import { v4 as uuidv4 } from 'uuid';
 const router = express.Router();
 
@@ -36,9 +35,9 @@ let newUser = await user.save();
 if(!newUser) {
     throw new Error();
 }
-res.send(newUser);
+res.json(newUser);
 } catch(error){
-    res.send({error: "Unable to create new user", message: 'Cannot read properties from v4'});
+    res.json({error: "Unable to create new user", message: 'Cannot read properties from v4'});
 };
     });
 
