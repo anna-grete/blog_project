@@ -3,8 +3,6 @@ import { createPostfix } from 'typescript';
 
 const endpoint = 'http://localhost:3000/posts/';
 
-
-
 describe('get post by ID', () => {
         beforeAll(() => {
     //käivitatakse enne testi paki algust (nt. tee test andmebaasi ja täida see)
@@ -19,7 +17,7 @@ describe('get post by ID', () => {
         expect(response?.data?.title).toEqual('Title for a random post');
     });
     it('Should return error for non existing ID', async () => {
-        const response = await axios.get(endpoint + '/30907668-68b8-4f24-ba83-b550f16bf50d');
+        const response = await axios.get(endpoint + '/nonExistentID');
         const data = response.data;
         console.log(data);
         expect(data).toHaveProperty('message');
