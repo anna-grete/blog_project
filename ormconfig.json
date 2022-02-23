@@ -1,10 +1,13 @@
-{
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "Tere12345",
-    "database": "blog",
-    "entities": ["src/entities/*.ts"],
-    "synchronize": true
+const config = require("./src/config/config.json");
+
+const tsConfig = {
+  "type": "mysql",
+  "entities": [__dirname + "/../entities/*{.ts,.js}"],
+  "host": "config.host",
+  "port": "config.port",
+  "database": "blog",
+  "username": "config.username",
+  "password": "config.password",
+  "synchronize": true
 }
+module.exports = tsConfig;
